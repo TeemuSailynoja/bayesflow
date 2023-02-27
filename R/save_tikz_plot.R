@@ -15,7 +15,7 @@ save_tikz_plot <- function(
   }
   
   # make tex
-  tiksDevice::tikz(file = filename, width = width, height = height)
+  tikzDevice::tikz(file = filename, width = width, height = height)
   print(plot)
   dev.off()
   
