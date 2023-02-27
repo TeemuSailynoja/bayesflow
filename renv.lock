@@ -9,6 +9,32 @@
     ]
   },
   "Packages": {
+    "digest": {
+      "Package": "digest",
+      "Version": "0.6.31",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "8b708f296afd9ae69f450f9640be8990",
+      "Requirements": []
+    },
+    "filehash": {
+      "Package": "filehash",
+      "Version": "2.4-5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "90785927275953792d16a88f84943d6a",
+      "Requirements": [
+        "digest"
+      ]
+    },
+    "png": {
+      "Package": "png",
+      "Version": "0.1-8",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "bd54ba8a0a5faded999a7aab6e46b374",
+      "Requirements": []
+    },
     "renv": {
       "Package": "renv",
       "Version": "0.16.0",
@@ -16,6 +42,17 @@
       "Repository": "CRAN",
       "Hash": "c9e8442ab69bc21c9697ecf856c1e6c7",
       "Requirements": []
+    },
+    "tikzDevice": {
+      "Package": "tikzDevice",
+      "Version": "0.12.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4a56483b20f52c123a99316c6193bbb5",
+      "Requirements": [
+        "filehash",
+        "png"
+      ]
     }
   }
 }

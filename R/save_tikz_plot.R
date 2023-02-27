@@ -1,6 +1,20 @@
+#' Save ggplot object as a tikz file.
+#'
+#' @param plot a ggplot2 object to be saved.
+#' @param filename A character string indicating the desired path to the output
+#' file. If both arguments are used in the function call, file will be
+#' preferred.
+#' @param width The width of the output figure, in **inches**.
+#' @param height The height of the output figure, in **inches**.
+#' @param asp The aspect ratio of the saved figure.
+#'
+#' @return save_tikz_plot returns no values.
+#' @export
 save_tikz_plot <- function(
     plot, filename, width = NA, height = NA, asp = NA
 ) {
+  loadNamespace("tikzDevice")
+  loadNamespace("grDevices")
   # automatic scaling
   if (is.na(asp)) asp <- 1.618
   if (is.na(width) && is.na(height)) {
@@ -13,12 +27,12 @@ save_tikz_plot <- function(
   else if (is.na(height)) {
     height <- width / asp
   }
-  
+
   # make tex
   tikzDevice::tikz(file = filename, width = width, height = height)
   print(plot)
-  dev.off()
-  
+  grDevices::dev.off()
+
   # patch cropping issues
   lines <- readLines(con = filename)
   lines <- lines[-which(grepl("\\path\\[clip\\]*", lines))]
