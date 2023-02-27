@@ -2,12 +2,12 @@
 % Please edit documentation in R/save_tikz_plot.R
 \name{save_tikz_plot}
 \alias{save_tikz_plot}
-\title{Save ggplot object as a tikz file.}
+\title{Save a graphic or plot as a tikz file.}
 \usage{
 save_tikz_plot(plot, filename, width = NA, height = NA, asp = NA)
 }
 \arguments{
-\item{plot}{a ggplot2 object to be saved.}
+\item{plot}{the object to be saved.}
 
 \item{filename}{A character string indicating the desired path to the output
 file. If both arguments are used in the function call, file will be
@@ -23,5 +23,5 @@ preferred.}
 save_tikz_plot returns no values.
 }
 \description{
-Save ggplot object as a tikz file.
+Save a graphic or plot as a tikz file.
 }
