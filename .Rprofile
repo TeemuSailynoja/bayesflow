@@ -1,5 +1,3 @@
-source("renv/activate.R")
-
 options(Ncpus = 4L,
         mc.cores = 4L,
         future.plan = "multisession")
