@@ -1,0 +1,11 @@
+Package: bayesflow
+Type: Package
+Title: Utilities for Bayesian workflow
+Version: 0.1.0
+Author: Developed as a joint effort by the Bayesian Workflow team in Aalto University
+Maintainer: Teemu Säilynoja <teemu.sailynoja@gmail.com>
+Description: The goal of this package is to work as a collection of utility functions for the different parts of the Bayesian workflow, as well as to make the setup and authoring of reports and presentations more convenient for package users.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
