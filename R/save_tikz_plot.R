@@ -1,6 +1,6 @@
-#' Save ggplot object as a tikz file.
+#' Save a graphic or plot as a tikz file.
 #'
-#' @param plot a ggplot2 object to be saved.
+#' @param plot the object to be saved.
 #' @param filename A character string indicating the desired path to the output
 #' file. If both arguments are used in the function call, file will be
 #' preferred.
