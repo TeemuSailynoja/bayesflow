@@ -12,3 +12,5 @@ RoxygenNote: 7.2.3
 Suggests:
     grDevices,
     tikzDevice
+Imports: 
+    checkmate
