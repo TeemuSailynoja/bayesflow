@@ -4,6 +4,16 @@
 ##' @param n_datasets Number of datasets to generate
 ##' @param ... Arguments passed to data-generating process function
 ##' @return List of datasets, each generated from the dgp function
+##'
+##' @examples
+##' \dontrun{
+##' generate_from_dgp(
+##'   dgp = dgp_example_normal,
+##'   n_datasets = 10,
+##'   mean = 5,
+##'   sd = 2
+##' )
+##' }
 generate_from_dgp <- function(dgp, n_datasets, ...) {
 
   checkmate::assert_function(dgp)
@@ -28,7 +38,7 @@ dgp_example_normal <- function(n, mean, sd, ...) {
   true_pars <- list(mu = mean, sigma = sd)
 
   # generate data set
-  y <- rnorm(n, mean, sd)
+  y <- stats::rnorm(n, mean, sd)
 
   return(list(true_pars = true_pars, y = y))
 
