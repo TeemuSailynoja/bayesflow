@@ -14,6 +14,7 @@
 ##'   sd = 2
 ##' )
 ##' }
+##' @export
 generate_from_dgp <- function(dgp, n_datasets, ...) {
 
   checkmate::assert_function(dgp)
@@ -32,14 +33,21 @@ generate_from_dgp <- function(dgp, n_datasets, ...) {
 ##' @param sd Standard deviation of normal distribution
 ##' @param ... unused but required to exist for use with `generate_from_dgp`
 ##' @return List of true parameters (mu and sigma) and observations
-dgp_example_normal <- function(n, mean, sd, ...) {
+##' @export
+dgp_example_normal <- function(rep_id, n, mu, sigma, ...) {
 
   # save parameters
-  true_pars <- list(mu = mean, sigma = sd)
+  dgp_pars <- list(n = n, mu = mu, sigma = sigma)
 
   # generate data set
-  y <- stats::rnorm(n, mean, sd)
+  y <- stats::rnorm(n = n, mean = mu, sd = sigma)
 
-  return(list(true_pars = true_pars, y = y))
+  return(
+    list(
+      rep_id = rep_id,
+      dgp_pars = dgp_pars,
+      data = list(y = y)
+    )
+  )
 
 }
