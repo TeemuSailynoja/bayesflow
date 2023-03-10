@@ -41,7 +41,7 @@ dgp_example_normal <- function(rep_id, n_obs, mu, sigma, ...) {
   dgp_args <- list(n_obs = n_obs, mu = mu, sigma = sigma)
 
   true_pars <- list(mu = mu, sigma = sigma)
-  
+
   # generate data set
   y <- stats::rnorm(n = n_obs, mean = mu, sd = sigma)
 
@@ -49,7 +49,7 @@ dgp_example_normal <- function(rep_id, n_obs, mu, sigma, ...) {
     list(
       rep_id = rep_id,
       dgp_args = dgp_args,
-      true_pars = list(mu = mu, sigma = sigma)
+      true_pars = list(mu = mu, sigma = sigma),
       data = list(y = y)
     )
   )
