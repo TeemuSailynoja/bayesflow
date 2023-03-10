@@ -10,8 +10,8 @@
 ##' generate_from_dgp(
 ##'   dgp = dgp_example_normal,
 ##'   n_datasets = 10,
-##'   mean = 5,
-##'   sd = 2
+##'   mu = 5,
+##'   sigma = 2
 ##' )
 ##' }
 ##' @export
@@ -28,19 +28,20 @@ generate_from_dgp <- function(dgp, n_datasets, ...) {
 
 ##' Example data-generating process (normal distribution)
 ##'
-##' @param n Number of observations
-##' @param mean Mean of normal distribution
-##' @param sd Standard deviation of normal distribution
-##' @param ... unused but required to exist for use with `generate_from_dgp`
-##' @return List of true parameters (mu and sigma) and observations
+##' @param rep_id id of dataset
+##' @param n_obs number of observations
+##' @param mu mu parameter
+##' @param sigma sigma parameter
+##' @param ... Unused
+##' @return List of true parameters (mu and sigma) and resulting observations
 ##' @export
-dgp_example_normal <- function(rep_id, n, mu, sigma, ...) {
+dgp_example_normal <- function(rep_id, n_obs, mu, sigma, ...) {
 
   # save parameters
-  dgp_pars <- list(n = n, mu = mu, sigma = sigma)
+  dgp_pars <- list(n_obs = n_obs, mu = mu, sigma = sigma)
 
   # generate data set
-  y <- stats::rnorm(n = n, mean = mu, sd = sigma)
+  y <- stats::rnorm(n = n_obs, mean = mu, sd = sigma)
 
   return(
     list(

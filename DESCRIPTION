@@ -13,4 +13,5 @@ Suggests:
     grDevices,
     tikzDevice
 Imports: 
-    checkmate
+    checkmate,
+    stats
