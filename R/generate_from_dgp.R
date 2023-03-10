@@ -38,15 +38,18 @@ generate_from_dgp <- function(dgp, n_datasets, ...) {
 dgp_example_normal <- function(rep_id, n_obs, mu, sigma, ...) {
 
   # save parameters
-  dgp_pars <- list(n_obs = n_obs, mu = mu, sigma = sigma)
+  dgp_args <- list(n_obs = n_obs, mu = mu, sigma = sigma)
 
+  true_pars <- list(mu = mu, sigma = sigma)
+  
   # generate data set
   y <- stats::rnorm(n = n_obs, mean = mu, sd = sigma)
 
   return(
     list(
       rep_id = rep_id,
-      dgp_pars = dgp_pars,
+      dgp_args = dgp_args,
+      true_pars = list(mu = mu, sigma = sigma)
       data = list(y = y)
     )
   )
