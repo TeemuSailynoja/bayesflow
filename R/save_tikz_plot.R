@@ -30,7 +30,11 @@ save_tikz_plot <- function(
 
   # make tex
   tikzDevice::tikz(file = filename, width = width, height = height)
-  print(plot)
+  # try to print the plot, allowing for error due to unescaped
+  # characters
+  try(
+    print(plot)
+  )
   grDevices::dev.off()
 
   # patch cropping issues
