@@ -15,4 +15,5 @@ Suggests:
     cmdstanr,
     rstan
 Imports: 
-    checkmate
+    checkmate,
+    stats
