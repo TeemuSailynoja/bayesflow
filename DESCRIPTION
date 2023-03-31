@@ -11,7 +11,9 @@ LazyData: true
 RoxygenNote: 7.2.3
 Suggests:
     grDevices,
-    tikzDevice
+    tikzDevice,
+    cmdstanr,
+    rstan
 Imports: 
     checkmate,
     stats
